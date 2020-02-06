@@ -1,11 +1,22 @@
-.footer{
+/* footer  */
+footer{
     padding:20px;
     /* bottom: 100; */
-    margin-top:20px;
+    /* margin-top:20px; */
     /* height: 60px; */
     text-align: center;
+    margin: 500px 0px 0px 0px;
+    border: solid 1px ;
+}
+/* for img in the main page */
+div div div img {
+    margin-left: 300px;
 }
 
+
+
+
+/* sign form */
 .form-control {
     min-height: 41px;
     box-shadow: none;
