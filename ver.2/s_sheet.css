@@ -1,0 +1,26 @@
+/* footer  */
+footer{
+    padding:20px;
+    /* bottom: 100; */
+    /* margin-top:20px; */
+    /* height: 60px; */
+    text-align: center;
+    margin: 250px 0px 0px 0px;
+    border: solid 1px black;
+}
+
+#error_msg{
+    margin: 20px;
+    padding: 0px;
+    background-color: #fe8b8e;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+.avatar {
+    vertical-align: bottom;
+    width: 150px;
+    height: 150px;
+    border-radius: 150%;
+  }
+
