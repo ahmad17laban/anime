@@ -8,7 +8,7 @@ footer{
     margin: 250px 0px 0px 0px;
     border: solid 1px black;
 }
-
+/* for Javascript validation */
 #error_msg{
     margin: 20px;
     padding: 0px;
