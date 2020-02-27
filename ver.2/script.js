@@ -34,7 +34,7 @@ function valid() {
     error_msg.innerHTML = text
     return false
   }
-  // valdition for c_box
+  
   if (c_box.checked==false){
     text="please agree on the term of use"
     error_msg.innerHTML = text
