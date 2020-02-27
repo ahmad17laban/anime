@@ -5,7 +5,7 @@ function valid() {
   var password = document.getElementById('inputPassword3').value
   var c_password = document.getElementById('inputPassword4').value
   var error_msg = document.getElementById('error_msg')
-  var c_box = document.getElementById('gridCheck1').checked = true
+  var c_box = document.getElementById('gridCheck1')
   var text
   error_msg.style.padding = "10px"
   if (name.length < 5) {
@@ -34,6 +34,13 @@ function valid() {
     error_msg.innerHTML = text
     return false
   }
+  if (c_box.checked==false){
+    text="please agree on the term of use"
+    error_msg.innerHTML = text
+    return false
+
+
+  } 
   // alert('valid')
   return true
 
