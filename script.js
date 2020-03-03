@@ -1,3 +1,4 @@
+
 // valid function to check all feilds in sign_up.html
 function valid() {
   var name = document.getElementById('inputName3').value
