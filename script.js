@@ -1,4 +1,3 @@
-
 // valid function to check all feilds in sign_up.html
 function valid() {
   var name = document.getElementById('inputName3').value
@@ -35,14 +34,14 @@ function valid() {
     error_msg.innerHTML = text
     return false
   }
-  
-  if (c_box.checked==false){
-    text="please agree on the term of use"
+
+  if (c_box.checked == false) {
+    text = "please agree on the term of use"
     error_msg.innerHTML = text
     return false
 
 
-  } 
+  }
   // alert('valid')
   return true
 
