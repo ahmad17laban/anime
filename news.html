@@ -29,6 +29,7 @@
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/10567e676e.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
+  <script src="json.js"></script>
 
 </head>
 
@@ -80,7 +81,11 @@
 
         <!-- Grid column -->
         <div class="col-md-10 col-lg-9 col-xl-6 mb-r">
-
+          <div id="mycard">
+          </div>
+          <script>
+            cardPrint("mycard");
+          </script>
           <!--Panel-->
           <div class="card card-body mb-3">
             <div class="media d-block d-md-flex">
