@@ -18,6 +18,13 @@ footer{
     transition: all 0.5s ease;
     
 }
+
+
+
+table#alk-table tr th {
+    width: 80px;
+  }
+
 .avatar {
     vertical-align: bottom;
     width: 150px;
