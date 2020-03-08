@@ -1,8 +1,9 @@
+// for fake backend req's
 $(document).ready(function () {
     $("#mybtn").click(function () {
         $.ajax({
             url: "https://reqres.in/api/users?per_page=10",
-            data: {},
+            // data: {},
             type: 'GET'
             // beforeSend: function(){}
         }).done(function (response) {
