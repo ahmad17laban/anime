@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- in case for any modification -->
-  <link rel="stylesheet" href="s_sheet.css">
+  <link rel="stylesheet" href="/static/s_sheet.css">
   <!-- fontawesome link for icons -->
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'
     type='text/css'>
@@ -26,8 +26,8 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/10567e676e.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-  <script src="req.js"></script>
+    {%block script%}
+    {%endblock script%}
 </head>
 
 
@@ -74,16 +74,17 @@
         </div>
       </nav>
     </section>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<div id="mydata" class="container" style="margin-left: 37%;">
-<button id="mybtn"> press </button>
-    <!-- <table class="container" id="alk-table" border="1">
-        <thead><tr><th>Id</th><th>Firstname</th><th>Lastname</th><th>Avatar</th></tr></thead>
-        <tbody></tbody>
-      </table> -->
-</div>
 
+    {%block content%}
+    {%endblock content %}
+
+
+
+
+
+
+
+    <!-- footer starts here  -->
     <footer class=" bg-dark navbar-fixed-bootom page-footer font-small unique-color-dark pt-4"
       style="margin: 10% 0px 0px 0px;">
 
