@@ -9,15 +9,16 @@
     </div>
 
     <!-- form for contact_us -->
-    <form class="container border border-dark" style="background-color: white; margin-bottom: 10px; padding: 60px;  ">
+    <form action="" class="container border border-dark" style="background-color: white; margin-bottom: 10px; padding: 60px;  " 
+    method="POST">
       <div class="form-group">
         <label for="exampleInputPassword1">Name</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <input name="name_us" type="text" class="form-control" id="exampleInputPassword1">
         <small id="emailHelp" class="form-text text-muted">Enter your name </small>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input name="email_us" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">Enter your Email</small>
       </div>
       <!-- <div class="form-group form-check">
@@ -27,8 +28,8 @@
 
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Subject</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <button style="margin-top: 10px;" type="submit" class="btn btn-primary">Submit</button>
+        <textarea name="textare_us" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <button  style="margin-top: 10px;" type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
     <!-- end of form -->

@@ -5,43 +5,44 @@ function valid() {
   var password = document.getElementById('inputPassword3').value
   var c_password = document.getElementById('inputPassword4').value
   var error_msg = document.getElementById('error_msg')
-  var c_box = document.getElementById('gridCheck1')
+  var c_box = document.getElementById('gridCheck1').value
   var text
   error_msg.style.padding = "10px"
   if (name.length < 5) {
-    text = "plese enter valid name"
+    text = "please enter valid name"
     error_msg.innerHTML = text
     return false
   }
   // starters needs change 
-  if (c_box.checked = false) {
-    text = 'please agree on the term of use'
-    return false
-  }
+  // if (c_box.checked == false) {
+  //   text = 'please agree on the term of use'
+  //   error_msg.innerHTML = text
+  //   return false
+  // }
 
   if (email.indexOf("@") == -1 || email.length < 10) {
-    text = "plese enter valid Email"
+    text = "please enter valid Email"
     error_msg.innerHTML = text
     return false
   }
   if (password.length < 6) {
-    text = "plese enter valid passport"
+    text = "please enter valid password"
     error_msg.innerHTML = text
     return false
   }
   if (password != c_password) {
-    text = "plese enter valid passport"
+    text = "confirm password not correct"
     error_msg.innerHTML = text
     return false
   }
 
-  if (c_box.checked == false) {
-    text = "please agree on the term of use"
-    error_msg.innerHTML = text
-    return false
+  // if (c_box.checked == false) {
+  //   text = "please agree on the term of use"
+  //   error_msg.innerHTML = text
+  //   return false
 
 
-  }
+  // }
   // alert('valid')
   return true
 
