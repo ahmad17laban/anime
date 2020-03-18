@@ -1,8 +1,8 @@
-// for fake backend req's
+// for fake backend req's      ?per_page=10
 $(document).ready(function () {
     $("#mybtn").click(function () {
-        $.ajax({
-            url: "https://reqres.in/api/users?per_page=10",
+        $.ajax({   
+            url: "https://reqres.in/api/users",
             // data: {},
             type: 'GET'
             // beforeSend: function(){}

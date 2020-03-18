@@ -47,7 +47,7 @@ def handle_email():
         nam = request.form['name_us']
         email = request.form['email_us']
         texarea= request.form['textare_us']
-        msg=Message('title',recipients=[email],sender='ahmad18laban@gmail.com')
+        msg=Message('title',recipients=['ahmad18laban@gmail.com'],sender=email)
         msg.body= texarea
         mail.send(msg)
         return render_template('index.html',message= f"{nam} your email was sent ", msgstat=True) 
