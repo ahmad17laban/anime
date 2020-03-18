@@ -14,8 +14,6 @@ app.secret_key = 'fbd1_efad885bf@35e1d5ea08424xenel221'
 @app.route("/index")
 def home():
     return render_template('index.html', title='Home Page')
-
-
 @app.route("/about_us.html")
 @app.route("/about_us")
 def about_us():
@@ -42,7 +40,7 @@ def contact_us():
 
 
 
-
+# for handle email (contact_us)
 @app.route('/handle_email',methods=['GET','POST'])
 def handle_email():
     if request.method  =='POST':
@@ -52,11 +50,7 @@ def handle_email():
         msg=Message('title',recipients=[email],sender='ahmad18laban@gmail.com')
         msg.body= texarea
         mail.send(msg)
-        return redirect(url_for("home")) 
-
-
-
-
+        return render_template('index.html',message= f"{nam} your email was sent ", msgstat=True) 
 
 
 
@@ -64,18 +58,15 @@ def handle_email():
 @app.route("/sign_up.html", methods=["POST","GET"])
 @app.route("/sign up")
 def register():
-    # if session ['em'] != None:
-    #     return render_template('index.html')
-
     return render_template('sign_up.html')
     
 
 
-    
+# for sign_up.html
 @app.route('/handle_data',methods=['POST','GET'])
 def handle_data():
     session['signed_up']=None
-    if request.method  =='POST' and session['signed_up']==None:
+    if request.method =='POST' and session['signed_up']==None:
         session['signed_up']=None        
         em = request.form['email']
         pw = request.form['password']
@@ -83,12 +74,10 @@ def handle_data():
         session['em']=em
         session['pw']=pw
         session['signed_up']=True
-        return render_template('index.html')
-    # elif session['em']==em and session['pw']==pw :
-    #     render_template('index.html',message=f"{em} is already registered {pw}",
-    #     msg_class= "alert alert-success")
+        if session['em']==em and session['pw']==pw and session['signed_up']==True:
+            return render_template('index.html',message=f"{em} you signed up",msgstat=True)
     else:
-        return render_template('index.html')
+        return render_template('sign_up.html')
 
 @app.route("/users_reqin.html")
 @app.route("/users")
@@ -108,8 +97,14 @@ def news():
 
 @app.route('/pop/')
 def pop():
-    em=session.pop('current_user')
+    em=session.pop('em')
     return f"{em} is removed"
+
+
+@app.route('/get/')
+def get():
+    c = session.get('em', 'Unknown')
+    return f"{c} is signed up"
 
 
 
@@ -118,7 +113,6 @@ def pop():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    # p= os.environ.get('POST')
+    # p= os.environ.get('PORT')
     # p='5000' if p == None else p
-    # serve(app,host='0.0.0.0')
-
+    # serve(app,host='0.0.0.0', port=p)

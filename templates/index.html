@@ -4,7 +4,13 @@
 {%endblock script%}
 {%block content%}
 <!-- end of navbar -->
-<h5  style="margin-left: 40%; display:none;" class="container alert " > your message was sent seccsfully</h5>
+    {% if msgstat ==True%}
+      <div class="alert alert-primary" role="alert" >
+      {{message}}
+      </div>
+      {%endif%}
+
+</div>
 <div style="padding: 1cm;" class="page-header">
   <h3><span style="color: black;">Most Popular Anime</span></h3>
   <br>
