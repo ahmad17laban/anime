@@ -95,6 +95,13 @@ def airing():
 def news():
     return render_template('news.html', title='News')
 
+
+@app.errorhandler(404)
+def err_404(error):
+   return render_template( '404.html' ), 404
+
+
+
 @app.route('/pop/')
 def pop():
     em=session.pop('em')
