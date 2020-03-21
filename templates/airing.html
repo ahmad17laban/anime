@@ -1,39 +1,23 @@
 {%extends "layout.html"%}
 {%block content%}
-  <div style="padding: 1cm;" class="page-header">
-      <h3><span style="color: black;">Winter 2020 Anime</span></h3>
-      <br>
-    </div>
-    <!--carousel starts here  -->
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-      <div class="carousel-inner" style="padding: 0px 0% 0px 17%;">
-        <div class="carousel-item active">
-          <a href="#"><img src="/static/Img/21.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/22.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/23.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/24.jpg" alt="First Slide"> </a>
-        </div>
-        <div class="carousel-item">
-          <a href="#"><img src="/static/Img/26.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/27.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/28.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/29.jpg" alt="First Slide"> </a>
-        </div>
-        <div class="carousel-item">
-          <a href="#"><img src="/static/Img/30.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/31.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/32.jpg" alt="First Slide"> </a>
-          <a href="#"><img src="/static/Img/33.jpg" alt="First Slide"> </a>
-        </div>
+<div style="padding: 1cm;" class="page-header">
+  <h3><span style="color: black;">Winter 2020 Anime</span></h3>
+  <br>
+</div>
+<div class="row">
+  <div class="container">
+    <div class="col-sm">
+    {%for p in post%}
+      <img src="{{post[p]['pic']}}" class="mr-3" alt="...">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">{{ post[p]['title'] }}</h5>
+        {{post[p]['desc'] | safe}}
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-        <span class="fa fa-chevron-left fa-lg" style="color:black;" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-        <span class="fa fa-chevron-right fa-lg" style="color:black;" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    <!-- carousel ends here -->
-    {%endblock content%}
+      </br>
+    {%endfor%}
+  </div>
+ </div>
+</div>
+<section>
+</section>
+{%endblock content%}

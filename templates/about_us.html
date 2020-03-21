@@ -3,20 +3,19 @@
     <script src="/static/script.js"></script>
     {%endblock script%}
     {%block content%}  
+    {%for p in post%}
     <section>
       <div class="container">
         <div class="row">
           <div class="col">
-
-            <img src="/static/img/attachment_74457099.jfif">
+            <!-- /static/img/attachment_74457099.jfif -->
+            <img src="{{post[p]['pic']}}">
             <div class="col">
-              <h1><span style="color: black;">About Us</span></h1>
+              <h1><span style="color: black;">{{ post[p]['title'] }}</span></h1>
               <div>
-                <h2 style="color:  black;">inspired software engineers makeing this site with humble simple database
-                  about some selected
-                  famous Anime and manga present some inforamtion and status for each one, also what tranding at this
-                  season
-                  our objtive to show the intresting story behaind each series
+                <h2 style="color:  black;">
+                  {{post[p]['desc'] | safe}}
+                  
                 </h2>
               </div>
             </div>
@@ -25,4 +24,5 @@
 
 
     </section>
+    {%endfor%}
     {%endblock content%}

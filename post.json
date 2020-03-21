@@ -1,0 +1,29 @@
+{
+    "about":{
+        "0":{
+        
+        "pic": "/static/img/attachment_74457099.jfif",
+        "title": "About Us",
+        "desc":"inspired software engineers makeing this site with humble simple database about some selected famous Anime and manga present some inforamtion and status for each one, also what tranding at this season our objtive to show the intresting story behaind each series"
+        }
+    },  
+    "airing":{
+        "0":{
+            "pic": "/static/Img/111.jpg",
+            "title": "One Piece",
+            "desc":"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus dio, vestibulum in vulputate at, tempus viverra turpis.Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."   
+            
+        }, "1":{
+            "pic": "/static/img/1111.png",
+            "title": "Naruto",
+            "desc":"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus dio, vestibulum in vulputate at, tempus viverra turpis.Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."
+
+
+        },"2":{
+            "pic": "/static/img/11111.jpg",
+            "title": "Bleach",
+            "desc":"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus dio, vestibulum in vulputate at, tempus viverra turpis.Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."
+
+        }
+    }
+}

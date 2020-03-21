@@ -3,6 +3,7 @@ from flask_mail import Mail, Message
 from waitress import serve
 import secrets 
 import os
+from data import storeData,readData
 secrets.token_hex(16)
 
 
@@ -17,8 +18,9 @@ def home():
 @app.route("/about_us.html")
 @app.route("/about_us")
 def about_us():
-    return render_template('about_us.html', title='About Us')
-
+    getpost = readData('post.json')
+    post=getpost['about']
+    return render_template('about_us.html', title='About Us', post=post)
 
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -30,8 +32,6 @@ app.config['MAIL_PASSWORD'] = 'hpjnckmuoowfyypq'
 mail = Mail(app)
 
 
-
-
 @app.route("/contact_us.html",methods=["POST","GET"])
 @app.route("/contact_us")
 def contact_us():
@@ -39,18 +39,16 @@ def contact_us():
     
 
 
-
 # for handle email (contact_us)
 @app.route('/handle_email',methods=['GET','POST'])
 def handle_email():
-    if request.method  =='POST':
-        nam = request.form['name_us']
-        email = request.form['email_us']
-        texarea= request.form['textare_us']
-        msg=Message('title',recipients=['ahmad18laban@gmail.com'],sender=email)
-        msg.body= texarea
-        mail.send(msg)
-        return render_template('index.html',message= f"{nam} your email was sent ", msgstat=True) 
+    nam = request.form['name_us']
+    email = request.form['email_us']
+    texarea= request.form['textarea_us']
+    msg=Message('Message from world of anime',recipients=['ahmad18laban@gmail.com'],sender=email)
+    msg.body= f''' {nam} said </br> {texarea} '''
+    mail.send(msg)
+    return render_template('index.html',message= f"{nam} your email was sent ", msgstat=True) 
 
 
 
@@ -58,6 +56,8 @@ def handle_email():
 @app.route("/sign_up.html", methods=["POST","GET"])
 @app.route("/sign up")
 def register():
+    if session.get('signed_up') == True:
+        render_template('index.html' ,message=f"you are already registred", msgstat=True)
     return render_template('sign_up.html')
     
 
@@ -65,19 +65,17 @@ def register():
 # for sign_up.html
 @app.route('/handle_data',methods=['POST','GET'])
 def handle_data():
-    session['signed_up']=None
-    if request.method =='POST' and session['signed_up']==None:
-        session['signed_up']=None        
-        em = request.form['email']
-        pw = request.form['password']
-        c_pw= request.form['confirm_password']
-        session['em']=em
-        session['pw']=pw
+    name_=request.form['name_']
+    em = request.form['email']
+    pw = request.form['password']
+    c_pw= request.form['confirm_password']
+    session['em']=em
+    session['pw']=pw
+    if session['em']== em and session['pw'] == pw :
         session['signed_up']=True
-        if session['em']==em and session['pw']==pw and session['signed_up']==True:
-            return render_template('index.html',message=f"{em} you signed up",msgstat=True)
-    else:
-        return render_template('sign_up.html')
+        return render_template('index.html',message=f"{name_} you signed up using {em}",msgstat=True)
+    # else:
+    #     return render_template('sign_up.html')
 
 @app.route("/users_reqin.html")
 @app.route("/users")
@@ -88,7 +86,9 @@ def users():
 @app.route('/airing.html')
 @app.route('/airing')
 def airing():
-    return render_template('airing.html', title='airing')
+    getpost = readData('post.json')
+    post=getpost['airing']
+    return render_template('airing.html', title='airing',post=post)
 
 @app.route('/news.html')
 @app.route('/news')
@@ -112,9 +112,6 @@ def pop():
 def get():
     c = session.get('em', 'Unknown')
     return f"{c} is signed up"
-
-
-
 
 
 
