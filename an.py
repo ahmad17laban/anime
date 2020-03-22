@@ -105,18 +105,25 @@ def err_404(error):
 @app.route('/pop/')
 def pop():
     em=session.pop('em')
-    return f"{em} is removed"
+    session.pop('signed_up')
+    redirect('/index.html')
 
 
 @app.route('/get/')
 def get():
-    c = session.get('em', 'Unknown')
-    return f"{c} is signed up"
+    c = session.get('em')
+    if c == 'em':
+        return f"{c} is signed up"
+        
+    return 'no one is signed up'
 
+    
 
 
 if __name__ == '__main__':
+    # Debug Mode
     app.run(debug=True)
+    # production mode 
     # p= os.environ.get('PORT')
     # p='5000' if p == None else p
     # serve(app,host='0.0.0.0', port=p)
