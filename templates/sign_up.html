@@ -5,7 +5,7 @@
 
   {%block content%}
     <div style="padding: 1cm ; margin-bottom: 5px" class="page-header">
-        <h1><span>sign up </span></h1>
+        <h1 class="text-center" ><span>sign up </span></h1>
       </div>
       <!-- margin: 50px;margin-bottom: 10px; padding: 60px; -->
       <!-- margin-top: 100px;margin-bottom:100px ;padding: 50px  -->
@@ -29,13 +29,13 @@
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-10">
-            <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Password must be 1 uppercase 1 digit" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
           </div>
         </div>
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>
           <div class="col-sm-10">
-            <input name="confirm_password" type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password">
+            <input name="confirm_password" type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" >
           </div>
         </div>
 

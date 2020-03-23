@@ -13,13 +13,7 @@ function valid() {
     error_msg.innerHTML = text
     return false
   }
-  // starters needs change 
-  // if (c_box.checked == false) {
-  //   text = 'please agree on the term of use'
-  //   error_msg.innerHTML = text
-  //   return false
-  // }
-
+  
   if (email.indexOf("@") == -1 || email.length < 10) {
     text = "please enter valid Email"
     error_msg.innerHTML = text
@@ -30,8 +24,14 @@ function valid() {
     error_msg.innerHTML = text
     return false
   }
+  if (password == '' || c_password == '') {
+    text='no password was entered'
+    error_msg.innerHTML = text
+    return false
+  }
+
   if (password != c_password) {
-    text = "confirm password not correct"
+    text = "passwords do not matches"
     error_msg.innerHTML = text
     return false
   }

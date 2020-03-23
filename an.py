@@ -18,7 +18,7 @@ def home():
 @app.route("/about_us.html")
 @app.route("/about_us")
 def about_us():
-    getpost = readData('post.json')
+    getpost = readData('top.json')
     post=getpost['about']
     return render_template('about_us.html', title='About Us', post=post)
 
@@ -86,14 +86,29 @@ def users():
 @app.route('/airing.html')
 @app.route('/airing')
 def airing():
-    getpost = readData('post.json')
+    getpost = readData('top.json')
     post=getpost['airing']
-    return render_template('airing.html', title='airing',post=post)
+    return render_template('airing.html', title='Top Airing',post=post)
+
+@app.route("/trailers.html")
+@app.route("/trailers")
+def trailers():
+    getpost = readData('top.json')
+    post=getpost['trailers']
+    return render_template('trailers.html', title='Top Trailers',post=post)
+
+
+
+
 
 @app.route('/news.html')
 @app.route('/news')
 def news():
     return render_template('news.html', title='News')
+
+
+
+
 
 
 @app.errorhandler(404)

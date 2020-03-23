@@ -1,15 +1,11 @@
-// for fake backend req's      ?per_page=10
+// for fake backend req's ?per_page=10
 $(document).ready(function () {
     $("#mybtn").click(function () {
         $.ajax({   
             url: "https://reqres.in/api/users",
-            // data: {},
             type: 'GET'
-            // beforeSend: function(){}
         }).done(function (response) {
             var trArr = new Array();
-// '<tr><td>' + v.id + '</td><td>' + v.first_name + '</td><td>' + v.last_name + '</td><td><img src="' + v.avatar + '" width="120px" /></td></tr>'
-// test
             $.each(response.data, function (i, v) {
                 trArr.push('<div class="card mb-3" style="max-width: 540px;">\
                 <div class="row no-gutters">\

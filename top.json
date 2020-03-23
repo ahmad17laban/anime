@@ -25,5 +25,22 @@
             "desc":"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus dio, vestibulum in vulputate at, tempus viverra turpis.Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."
 
         }
+    },
+    "trailers":{
+        "0":{
+            "src": "https://www.youtube.com/embed/3tNE1jjOIaE",
+            "title": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
+            "pic":"/static/Img/22222.jpg"
+        },
+        "1":{
+            "src": "https://www.youtube.com/embed/-BHSAHUDPoc",
+            "title": "Demon Slayer: Kimetsu no Yaiba Movie: Infinity Train",
+            "pic":"/static/Img/2222.jpg"
+        },
+        "2":{
+            "src": "https://www.youtube.com/embed/BzVfX5DoQC8",
+            "title": "Tensei shitara Slime Datta Ken 2nd Season",
+            "pic":"/static/Img/222.jpg"
+        }
     }
 }

@@ -1,0 +1,69 @@
+{%extends "layout.html"%}
+{%block script%}
+<script src="/static/iframe.js"></script>
+{%endblock script%}
+{%block content%}
+
+<div style="padding: 1cm;" class="page-header">
+    <h3 class="text-center"><span style="color: black;">Top Trailers</span></h3>
+    <br>
+  </div>
+<!-- start of all iframe videos -->
+<!-- Grid row -->
+
+<div class="row" style="margin: 0% 5% 0% 0%; margin-left: 5%;">
+    <!-- Grid column -->
+    {%for p in post%}    
+    <div class=" col-lg-4 col-md-12 mb-4">
+        
+        <!--Modal: Name-->
+        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+
+                <!--Content-->
+                <div class="modal-content">
+
+                    <!--Body-->
+                    <div class="modal-body mb-0 p-0">
+                                <!-- src -->
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe class="embed-responsive-item" src="{{ post[p]['src'] }}"
+                                allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+                    <!-- tittle -->
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <span class="mr-4">{{ post[p]['title'] }}</span>
+                        <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
+                        <!--Twitter-->
+                        <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
+
+
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                            data-dismiss="modal">Close</button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!--Modal: Name-->
+        <!--/.Content of iframe -->
+        <!-- img -->
+        <a><img class="img-fluid z-depth-1" src="{{post[p]['pic']}}" alt="video" data-toggle="modal"
+                data-target="#modal1"></a>
+    </div>
+    {%endfor%}
+</div>
+
+    
+<section>
+</section>
+{%endblock content%}
