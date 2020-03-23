@@ -46,7 +46,7 @@ def handle_email():
     email = request.form['email_us']
     texarea= request.form['textarea_us']
     msg=Message('Message from world of anime',recipients=['ahmad18laban@gmail.com'],sender=email)
-    msg.body= f''' {nam} said </br> {texarea} '''
+    msg.body= f''' {nam} said {texarea} '''
     mail.send(msg)
     return render_template('index.html',message= f"{nam} your email was sent ", msgstat=True) 
 
@@ -74,8 +74,6 @@ def handle_data():
     if session['em']== em and session['pw'] == pw :
         session['signed_up']=True
         return render_template('index.html',message=f"{name_} you signed up using {em}",msgstat=True)
-    # else:
-    #     return render_template('sign_up.html')
 
 @app.route("/users_reqin.html")
 @app.route("/users")

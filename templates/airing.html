@@ -8,10 +8,10 @@
   <div class="container">
     <div class="col-sm">
     {%for p in post%}
-      <img src="{{post[p]['pic']}}" class="mr-3" alt="...">
+      <img src="{{p.pic}}" class="mr-3" alt="...">
       <div class="media-body">
-        <h5 class="mt-0 mb-1">{{ post[p]['title'] }}</h5>
-        {{post[p]['desc'] | safe}}
+        <h5 class="mt-0 mb-1">{{p.title }}</h5>
+        {{p.desc | safe}}
       </div>
       </br>
     {%endfor%}
