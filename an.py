@@ -152,7 +152,12 @@ def get():
         
     return 'no one is signed up'
 
-    
+
+
+
+@app.route('/dtable.html')
+def dtable():
+    return render_template('dtable.html')
 
 
 if __name__ == '__main__':
