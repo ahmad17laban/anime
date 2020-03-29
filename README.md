@@ -25,3 +25,9 @@ abulaban.fadel
 > - content of Home and about ...etc should placed in root folder
 > - links (paths).
 > - ___Sami, 1-3-2020___
+
+> - use back-qoutation
+> - edit json file (use lists)
+> - edit the password check entry
+> - check file names (no capital letters)
+> - ___Sami, 23-03-2020___
