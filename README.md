@@ -8,6 +8,15 @@ abulaban.fadel
  ### Aims of the website
 * the objective the website, is to  
 
+
+
+### How to use :
+* Download everything in the requirments.txt file 
+* using the following: pip install -r requirments.txt
+
+
+
+
 ### Functionality 
  - Home 
  - Contact us 

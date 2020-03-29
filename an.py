@@ -15,6 +15,7 @@ app.secret_key = 'fbd1_efad885bf@35e1d5ea08424xenel221'
 @app.route("/index")
 def home():
     return render_template('index.html', title='Home Page')
+
 @app.route("/about_us.html")
 @app.route("/about_us")
 def about_us():
@@ -45,8 +46,8 @@ def handle_email():
     nam = request.form['name_us']
     email = request.form['email_us']
     texarea= request.form['textarea_us']
-    msg=Message('Message from world of anime',recipients=['ahmad18laban@gmail.com'],sender=email)
-    msg.body= f''' {nam} said </br> {texarea} '''
+    msg=Message(f"Message {email}",recipients=['ahmad18laban@gmail.com'],sender=email)
+    msg.body= f''' {nam} said {texarea} '''
     mail.send(msg)
     return render_template('index.html',message= f"{nam} your email was sent ", msgstat=True) 
 
@@ -56,8 +57,8 @@ def handle_email():
 @app.route("/sign_up.html", methods=["POST","GET"])
 @app.route("/sign up")
 def register():
-    if session.get('signed_up') == True:
-        render_template('index.html' ,message=f"you are already registred", msgstat=True)
+    # if session.get('signed_up') == True:
+    #     render_template('index.html' ,message=f"you are already registred", msgstat=True)
     return render_template('sign_up.html')
     
 
@@ -71,11 +72,28 @@ def handle_data():
     c_pw= request.form['confirm_password']
     session['em']=em
     session['pw']=pw
-    if session['em']== em and session['pw'] == pw :
-        session['signed_up']=True
-        return render_template('index.html',message=f"{name_} you signed up using {em}",msgstat=True)
-    # else:
-    #     return render_template('sign_up.html')
+    members = readData('data.json')
+    if em in members:
+        session['signed_up'] = True
+        return render_template('index.html', 
+        name_ = name_,
+        pw = pw,
+        em = em, 
+        message=f"{name_} is already regestred {em}",msgstat=True)
+    else:
+        storeData(members, 'data.json', 'data','none', name_, pw, em)
+        return render_template(
+            'index.html',
+            message=f"{name_} is registered using, {em}",
+            msgstat=True)
+    
+    
+    
+    
+    
+    # if session['em']== em and session['pw'] == pw :
+    #     session['signed_up']=True
+    #     return render_template('index.html',message=f"{name_} you signed up using {em}",msgstat=True)
 
 @app.route("/users_reqin.html")
 @app.route("/users")
@@ -120,14 +138,16 @@ def err_404(error):
 @app.route('/pop/')
 def pop():
     em=session.pop('em')
-    session.pop('signed_up')
-    redirect('/index.html')
+    # session.pop('signed_up')
+    return  render_template('index.html',message=f"{em} you signed out ",msgstat=True)
+
+    
 
 
 @app.route('/get/')
 def get():
     c = session.get('em')
-    if c == 'em':
+    if c:
         return f"{c} is signed up"
         
     return 'no one is signed up'

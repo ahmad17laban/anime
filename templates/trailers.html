@@ -28,7 +28,7 @@
                     <div class="modal-body mb-0 p-0">
                                 <!-- src -->
                         <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                            <iframe class="embed-responsive-item" src="{{ post[p]['src'] }}"
+                            <iframe class="embed-responsive-item" src="{{ p.src }}"
                                 allowfullscreen></iframe>
                         </div>
 
@@ -36,7 +36,7 @@
                     <!-- tittle -->
                     <!--Footer-->
                     <div class="modal-footer justify-content-center">
-                        <span class="mr-4">{{ post[p]['title'] }}</span>
+                        <span class="mr-4">{{ p.title }}</span>
                         <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
                         <!--Twitter-->
                         <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
@@ -57,7 +57,7 @@
         <!--Modal: Name-->
         <!--/.Content of iframe -->
         <!-- img -->
-        <a><img class="img-fluid z-depth-1" src="{{post[p]['pic']}}" alt="video" data-toggle="modal"
+        <a><img class="img-fluid z-depth-1" src="{{p.pic}}" alt="video" data-toggle="modal"
                 data-target="#modal1"></a>
     </div>
     {%endfor%}
