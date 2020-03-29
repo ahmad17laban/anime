@@ -57,8 +57,8 @@ def handle_email():
 @app.route("/sign_up.html", methods=["POST","GET"])
 @app.route("/sign up")
 def register():
-    # if session.get('signed_up') == True:
-    #     render_template('index.html' ,message=f"you are already registred", msgstat=True)
+    if session.get('signed_up') == True:
+        render_template('index.html' ,message=f"you are already registred", msgstat=True)
     return render_template('sign_up.html')
     
 
