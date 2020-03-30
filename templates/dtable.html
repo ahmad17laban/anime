@@ -1,42 +1,48 @@
 {%extends "layout.html"%}
-    {%block script%}
-    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
-    {%endblock script%}
-    {%block content%}  
+{%block script%}
+<link rel="stylesheet" type="text/css"
+    href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+{%endblock script%}
+{%block content%}
 <section>
-    
 
+    <br>
+    <br>
+    <br>
 
-<table id="mytable" class="container"></table>
-<thead>
-    <tr>
-        <th>id</th>
-        <th>email</th>
-        <th>fname</th>
-        <th>lname</th>
-        <th>avatar</th>
-    </tr>
-</thead>
+    <div class="container">
+        <table id="mytable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>email</th>
+                    <th>fname</th>
+                    <th>lname</th>
+                    <th>avatar</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 
+    <script>
+        $(document).ready(function () {
+            $('#mytable').DataTable({
+                "ajax": "https://reqres.in/api/users",
+                "columns": [
+                    { "data": "id" },
+                    { "data": "first_name" },
+                    { "data": "last_name" },
+                    { "data": "email" },
+                    { "data": "avatar" }
+                ]
 
-<script>$(document).ready( function () {
-    $('#mytable').DataTable({
-        "ajax": "https://reqres.in/api/users",
-        "columns"   :[
-            {"data":"id"},
-            {"data":"first_name"},
-            {"data":"last_name"},
-            {"data":"email"},
-            {"data":"avatar"}
-        ]
-
-    });
-} );</script>
+            });
+        });</script>
 
 </section>
-    {%endblock content%}
+{%endblock content%}
