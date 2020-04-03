@@ -30,8 +30,8 @@ var cards = {
 $(document).ready(function () {
     for (var key in cards) {
         $("#cardGet").append(
-            `<div class="card border-info rounded mb-3">
-        <img src=" ${cards[key].pic }" class="card-img-top" alt="..."></img>
+            `<div class="card border-info rounded mb-3  ">
+        <img style= "border: solid 1px black;" src=" ${cards[key].pic }" class="card-img-top" alt="..."></img>
         <div class="card-body">
         <h5 class="card-title text-info text-center">${cards[key].title}</h5>
         <p class="card-text text-justify">'+ cards[key].desc + '</p>
