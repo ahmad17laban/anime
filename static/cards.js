@@ -1,6 +1,6 @@
 var cards = {
     card1: {
-        pic: "/static/Img/A.png",
+        pic: "/static/img/A.png",
         title: "lorem lorem",
         desc: "helle worldhelle worldhelle worldhelle worldhelle worldhelle worldhelle world",
         date: "1 /4"

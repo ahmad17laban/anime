@@ -8,7 +8,7 @@
     ],  
     "airing":[
         {
-            "pic": "/static/Img/111.jpg",
+            "pic": "/static/img/111.jpg",
             "title": "One Piece",
             "desc":"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus dio, vestibulum in vulputate at, tempus viverra turpis.Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."   
             
@@ -29,17 +29,17 @@
         {
             "src": "https://www.youtube.com/embed/3tNE1jjOIaE",
             "title": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
-            "pic":"/static/Img/22222.jpg"
+            "pic":"/static/img/22222.jpg"
         },
         {
             "src": "https://www.youtube.com/embed/-BHSAHUDPoc",
             "title": "Demon Slayer: Kimetsu no Yaiba Movie: Infinity Train",
-            "pic":"/static/Img/2222.jpg"
+            "pic":"/static/img/2222.jpg"
         },
         {
             "src": "https://www.youtube.com/embed/BzVfX5DoQC8",
             "title": "Tensei shitara Slime Datta Ken 2nd Season",
-            "pic":"/static/Img/222.jpg"
+            "pic":"/static/img/222.jpg"
         }
     ]
 }

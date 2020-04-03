@@ -1,15 +1,15 @@
 var cards = {
     card1: {
-        pic: "/static/Img/A.png",
+        pic: "/static/img/A.png",
         title: "TAttack on Titan: The True Origin of The Founding Titan, Ymir, Revealed",
         
     },
     card2: {
-        pic: "/static/Img/B.jpg",
+        pic: "/static/img/B.jpg",
         title: "lorem emsom lorem helle help no thank U ",
         
     },card3: {
-        pic: "/static/Img/c.jpg",
+        pic: "/static/img/c.jpg",
         title: "TAttack on Titan: The True Origin of The Founding Titan, Ymir, Revealed",
         
     },
