@@ -139,7 +139,11 @@ def err_404(error):
 def pop():
     em=session.pop('em')
     # session.pop('signed_up')
-    return  render_template('index.html',message=f"{em} you signed out ",msgstat=True)
+    if not em :
+        return  render_template('index.html',message=f" no one you signed out ",msgstat=True)
+
+    else:
+        return  render_template('index.html',message=f"{em} you signed out ",msgstat=True)
 
     
 
@@ -162,8 +166,8 @@ def dtable():
 
 if __name__ == '__main__':
     # Debug Mode
-    # app.run(debug=True)
+    app.run(debug=True)
     # production mode 
-    p= os.environ.get('PORT')
-    p='5000' if p == None else p
-    serve(app,host='0.0.0.0', port=p)
+    # p= os.environ.get('PORT')
+    # p='5000' if p == None else p
+    # serve(app,host='0.0.0.0', port=p)

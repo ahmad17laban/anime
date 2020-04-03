@@ -1,12 +1,11 @@
 {
-    "about":{
-        "0":{
-        
-        "pic": "/static/img/attachment_74457099.jfif",
-        "title": "About Us",
-        "desc":"inspired software engineers makeing this site with humble simple database about some selected famous Anime and manga present some inforamtion and status for each one, also what tranding at this season our objtive to show the intresting story behaind each series"
+    "about":[
+        {   
+            "pic": "/static/img/attachment_74457099.jfif",
+            "title": "About Us",
+            "desc":"inspired software engineers makeing this site with humble simple database about some selected famous Anime and manga present some inforamtion and status for each one, also what tranding at this season our objtive to show the intresting story behaind each series"
         }
-    },  
+    ],  
     "airing":[
         {
             "pic": "/static/Img/111.jpg",
