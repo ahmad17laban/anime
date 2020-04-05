@@ -5,7 +5,7 @@ var cards = {
         
     },
     card2: {
-        pic: "/static/img/B.jpg",
+        pic: "/static/img/b.jpg",
         title: "lorem emsom lorem helle help no thank U ",
         
     },card3: {
