@@ -13,7 +13,7 @@ function valid() {
     error_msg.innerHTML = text
     return false
   }
-  
+
   if (email.indexOf("@") == -1 || email.length < 10) {
     text = "please enter valid Email"
     error_msg.innerHTML = text
@@ -25,7 +25,7 @@ function valid() {
     return false
   }
   if (password == '' || c_password == '') {
-    text='no password was entered'
+    text = 'no password was entered'
     error_msg.innerHTML = text
     return false
   }
@@ -36,18 +36,5 @@ function valid() {
     return false
   }
 
-  // if (c_box.checked == false) {
-  //   text = "please agree on the term of use"
-  //   error_msg.innerHTML = text
-  //   return false
-
-
-  // }
-  // alert('valid')
   return true
-
-
-
-
 }
-
