@@ -14,7 +14,7 @@ app.secret_key = 'fbd1_efad885bf@35e1d5ea08424xenel221'
 @app.route("/index.html")
 @app.route("/index")
 def home():
-    return render_template('index.html', title='Home Page')
+    return render_template('index.html', title='Home')
 
 
 

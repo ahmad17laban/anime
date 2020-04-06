@@ -6,7 +6,8 @@ abulaban.fadel
 * website for anime Geeks
 
  ### Aims of the website
-* the objective the website, is to  
+* the objective the website, is to keep the users updated about all new news about 
+* anime and manga.    
 
 
 
@@ -15,6 +16,8 @@ abulaban.fadel
 * using the following: pip install -r requirments.txt
 
 
+### website url : 
+* http//aniemw.herokuapp.com
 
 
 ### Functionality 
