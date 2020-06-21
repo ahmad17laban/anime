@@ -17,7 +17,7 @@ abulaban.fadel
 
 
 ### website url : 
-* http//aniemw.herokuapp.com
+* http://aniemw.herokuapp.com
 
 
 ### Functionality 
